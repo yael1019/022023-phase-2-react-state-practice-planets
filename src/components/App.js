@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import StarField from '../visual-effects/StarField'
 import PlanetSearch from "./PlanetSearch"
 import PlanetsContainer from "./PlanetsContainer"
@@ -7,21 +7,24 @@ import planets from '../data.js'
 
 function App() {
 
+  const [toggle, setToggle] = useState(true);
+  const [search, setSearch] = useState('');
+
   function toggleLightMode() {
-    console.log('make me toggle light mode and dark mode!')
+    setToggle(toggle => toggle = !toggle)
   }
 
   return (
-    <div className={`App dark-mode`}>
+    <div className={ toggle ? 'App light-mode' : `App dark-mode`}>
 
       {/* You won't have to touch StarField, it does cool visual things */}
       <StarField />
 
-      <PlanetSearch />
+      <PlanetSearch setSearch={ setSearch } />
 
-      <ToggleLightModeButton />
+      <ToggleLightModeButton toggleLightMode={ toggleLightMode } />
 
-      <PlanetsContainer planets={planets} />
+      <PlanetsContainer planets={planets} search={ search } />
 
     </div>
   );

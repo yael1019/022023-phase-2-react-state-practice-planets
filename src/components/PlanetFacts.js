@@ -1,6 +1,6 @@
 import React from 'react'
 
-function PlanetFacts({planet}) {
+function PlanetFacts({ planet }) {
 
   // this component is just here to display some planet facts!
   // use it in the PlanetCard when you toggle to showing the planet facts
