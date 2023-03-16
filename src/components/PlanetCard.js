@@ -16,7 +16,7 @@ function PlanetCard({ planet }) {
       <h2>{ planet.name }</h2>
       {
         changeCard 
-        ? <img className={planet.is_planet ? 'not-planet' : ''} src={ planet.image } alt={ planet.name } />
+        ? <img className={planet.is_planet ? '' : 'not-planet'} src={ planet.image } alt={ planet.name } />
         : <PlanetFacts planet={ planet } />
       }
     </div>
