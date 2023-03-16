@@ -20,7 +20,7 @@ function App() {
       {/* You won't have to touch StarField, it does cool visual things */}
       <StarField />
 
-      <PlanetSearch setSearch={ setSearch } />
+      <PlanetSearch setSearch={ setSearch } search={ search } />
 
       <ToggleLightModeButton toggleLightMode={ toggleLightMode } />
 
